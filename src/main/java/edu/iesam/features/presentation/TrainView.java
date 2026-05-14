@@ -3,6 +3,7 @@ package edu.iesam.features.presentation;
 import edu.iesam.features.data.TrainDataRepository;
 import edu.iesam.features.data.TrainMemLocalDataSource;
 import edu.iesam.features.domain.AddTrainUseCase;
+import edu.iesam.features.domain.DeleteTrainUseCase;
 import edu.iesam.features.domain.GetTrainsUseCase;
 import edu.iesam.features.domain.Train;
 
@@ -23,6 +24,13 @@ public class TrainView {
                 new TrainDataRepository(TrainMemLocalDataSource.newInstance()));
 
         return getTrainsUseCase.execute();
+    }
+
+    public void deleteTrain(String id) {
+        DeleteTrainUseCase deleteTrainUseCase = new DeleteTrainUseCase(
+                new TrainDataRepository(TrainMemLocalDataSource.newInstance()));
+
+        deleteTrainUseCase.execute(id);
     }
 
 }

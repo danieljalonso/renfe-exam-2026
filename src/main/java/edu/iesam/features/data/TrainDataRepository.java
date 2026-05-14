@@ -22,4 +22,9 @@ public class TrainDataRepository implements TrainRepository {
     public List<Train> getTrains() {
         return trainMemLocalDataSource.findAll();
     }
+
+    @Override
+    public void deleteTrain(String id) {
+        trainMemLocalDataSource.delete(id);
+    }
 }

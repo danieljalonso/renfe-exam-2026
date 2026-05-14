@@ -6,5 +6,6 @@ public interface TrainRepository {
 
     void addTrain(Train train);
     List<Train> getTrains();
+    void deleteTrain(String id);
 
 }
